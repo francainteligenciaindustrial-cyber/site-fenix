@@ -50,3 +50,46 @@ revealEls.forEach((el, i) => {
   el.style.transitionDelay = `${(i % 4) * 80}ms`;
   observer.observe(el);
 });
+
+/* Animated stat counters */
+const statNums = document.querySelectorAll('.stat-card__num[data-target]');
+
+function animateCounter(el) {
+  const target = parseFloat(el.getAttribute('data-target'));
+  const duration = 1600;
+  const start = performance.now();
+
+  function tick(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(target * eased);
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);
+      statObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.4 });
+
+statNums.forEach(el => statObserver.observe(el));
+
+/* Experimental class form -> WhatsApp deep link */
+const expForm = document.getElementById('expForm');
+if (expForm) {
+  expForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nome = expForm.nome.value.trim();
+    const telefone = expForm.telefone.value.trim();
+    const modalidade = expForm.modalidade.value;
+
+    const message = `Olá! Meu nome é ${nome} (WhatsApp: ${telefone}). Quero agendar uma aula experimental de ${modalidade} na Academia Fênix.`;
+    const url = `https://wa.me/556596233084?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank', 'noopener');
+  });
+}

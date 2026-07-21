@@ -5,11 +5,90 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Academia Fênix BBU | Musculação, Funcional, Crossfit e Jiu-Jitsu</title>
 <meta name="description" content="Academia Fênix BBU em Barra do Bugres/MT. Musculação, treino funcional, crossfit e jiu-jitsu em um só lugar. Agende sua aula experimental.">
-<link rel="icon" type="image/jpeg" href="assets/img/logo.jpg">
+<link rel="canonical" href="https://site-fenix-gamma.vercel.app/">
+
+<!-- Open Graph / WhatsApp / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Academia Fênix BBU">
+<meta property="og:title" content="Academia Fênix BBU | Musculação, Funcional, Crossfit e Jiu-Jitsu">
+<meta property="og:description" content="Musculação, funcional, crossfit e jiu-jitsu em uma estrutura completa em Barra do Bugres/MT. Agende sua aula experimental.">
+<meta property="og:url" content="https://site-fenix-gamma.vercel.app/">
+<meta property="og:image" content="https://site-fenix-gamma.vercel.app/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Academia Fênix BBU | Musculação, Funcional, Crossfit e Jiu-Jitsu">
+<meta name="twitter:description" content="Musculação, funcional, crossfit e jiu-jitsu em uma estrutura completa em Barra do Bugres/MT.">
+<meta name="twitter:image" content="https://site-fenix-gamma.vercel.app/assets/img/og-image.jpg">
+
+<!-- Favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#08080a">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ExerciseGym",
+  "name": "Academia Fênix BBU",
+  "image": "https://site-fenix-gamma.vercel.app/assets/img/og-image.jpg",
+  "url": "https://site-fenix-gamma.vercel.app/",
+  "telephone": "+556596233084",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Avenida Dep. Emanuel Pinheiro, Jardim Terra Nova",
+    "addressLocality": "Barra do Bugres",
+    "addressRegion": "MT",
+    "postalCode": "78390-000",
+    "addressCountry": "BR"
+  },
+  "sameAs": [
+    "https://instagram.com/academiafenix_bbu"
+  ],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "05:00", "closes": "13:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "15:00", "closes": "22:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "06:00", "closes": "10:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "15:30", "closes": "19:00" }
+  ]
+}
+</script>
+
+<!--
+  TODO: analytics desativado até você fornecer os IDs reais.
+  1) Troque G-XXXXXXXXXX pelo seu Measurement ID do Google Analytics 4.
+  2) Troque 000000000000000 pelo seu Meta Pixel ID.
+  3) Remova as marcas de comentário no início e no fim deste bloco para ativar.
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '000000000000000');
+  fbq('track', 'PageView');
+</script>
+-->
 </head>
 <body>
 
@@ -25,9 +104,9 @@
     <nav class="nav" id="nav">
       <a href="#sobre" class="nav__link">Sobre</a>
       <a href="#modalidades" class="nav__link">Modalidades</a>
-      <a href="#diferenciais" class="nav__link">Diferenciais</a>
+      <a href="#equipe" class="nav__link">Equipe</a>
       <a href="#planos" class="nav__link">Planos</a>
-      <a href="#horarios" class="nav__link">Horários</a>
+      <a href="#faq" class="nav__link">FAQ</a>
       <a href="#contato" class="nav__link">Contato</a>
     </nav>
 
@@ -42,9 +121,12 @@
 <div class="mobile-nav" id="mobileNav">
   <a href="#sobre" class="mobile-nav__link">Sobre</a>
   <a href="#modalidades" class="mobile-nav__link">Modalidades</a>
+  <a href="#equipe" class="mobile-nav__link">Equipe</a>
   <a href="#diferenciais" class="mobile-nav__link">Diferenciais</a>
+  <a href="#depoimentos" class="mobile-nav__link">Depoimentos</a>
   <a href="#planos" class="mobile-nav__link">Planos</a>
   <a href="#horarios" class="mobile-nav__link">Horários</a>
+  <a href="#faq" class="mobile-nav__link">FAQ</a>
   <a href="#contato" class="mobile-nav__link">Contato</a>
   <a href="https://wa.me/556596233084" target="_blank" rel="noopener" class="btn btn--primary">Matricule-se</a>
 </div>
@@ -61,6 +143,18 @@
       <p class="eyebrow reveal">Barra do Bugres · MT</p>
       <h1 class="hero__title reveal">Desperte o <span class="gradient-text">Fênix</span><br>que existe em você</h1>
       <p class="hero__subtitle reveal">Musculação, funcional, crossfit e jiu-jitsu em uma estrutura completa, pensada para o seu treino evoluir todos os dias.</p>
+
+      <div class="trust-row reveal">
+        <!-- TODO: confirme a nota real do Google e troque o href pelo link do seu perfil no Google Maps -->
+        <a href="#" target="_blank" rel="noopener" class="trust-chip">
+          <span class="trust-chip__stars">★★★★★</span> 4.8 no Google
+        </a>
+        <a href="https://instagram.com/academiafenix_bbu" target="_blank" rel="noopener" class="trust-chip">
+          <svg viewBox="0 0 24 24" class="trust-chip__icon"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>
+          +5.900 seguidores
+        </a>
+      </div>
+
       <div class="hero__actions reveal">
         <a href="https://wa.me/556596233084?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Academia%20F%C3%AAnix." target="_blank" rel="noopener" class="btn btn--primary">Agende uma aula experimental</a>
         <a href="#modalidades" class="btn btn--ghost">Conheça as modalidades</a>
@@ -95,13 +189,38 @@
 
         <div class="sobre__visual">
           <div class="photo-frame">
-            <img src="assets/img/foto-casal.jpg" alt="Alunos treinando na Academia Fênix" class="photo-frame__img">
+            <img src="assets/img/foto-casal.jpg" alt="Alunos treinando na Academia Fênix" class="photo-frame__img" loading="lazy" width="690" height="359">
             <div class="photo-frame__badge">
               <p class="photo-frame__quote">"Das cinzas, renascemos mais fortes."</p>
               <span class="photo-frame__sign">— Academia Fênix</span>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NÚMEROS / PROVA SOCIAL -->
+  <!-- TODO: os valores abaixo (data-target) são provisórios — troque pelos números reais da academia antes de divulgar o site. -->
+  <section class="stats-strip">
+    <div class="container stats-strip__grid">
+      <div class="stat-card reveal">
+        <span class="stat-card__num" data-target="5">0</span><span class="stat-card__suffix">+</span>
+        <span class="stat-card__label">anos de história</span>
+      </div>
+      <div class="stat-card reveal">
+        <span class="stat-card__num" data-target="500">0</span><span class="stat-card__suffix">+</span>
+        <span class="stat-card__label">alunos ativos</span>
+      </div>
+      <div class="stat-card reveal">
+        <span class="stat-card__num" data-target="4">0</span>
+        <span class="stat-card__label">modalidades em um só lugar</span>
+      </div>
+      <div class="stat-card reveal">
+        <a href="#" target="_blank" rel="noopener" class="stat-card__google">
+          <span class="stat-card__num stat-card__num--static">4.8<span class="stat-card__star">★</span></span>
+          <span class="stat-card__label">avaliação no Google</span>
+        </a>
       </div>
     </div>
   </section>
@@ -150,6 +269,43 @@
     </div>
   </section>
 
+  <!-- NOSSA EQUIPE -->
+  <!-- TODO: troque nome, foto, cargo e nº do CREF/faixa de cada profissional pelos dados reais da equipe. -->
+  <section class="section" id="equipe">
+    <div class="container">
+      <p class="eyebrow eyebrow--center">Quem cuida do seu treino</p>
+      <h2 class="section__title section__title--center">Nossa <span class="gradient-text">Equipe</span></h2>
+      <p class="section__subtitle">Profissionais qualificados e apaixonados por ver você evoluir.</p>
+
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="team-card__photo team-card__photo--placeholder">
+            <svg viewBox="0 0 24 24"><path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="team-card__name">Nome do Professor</h3>
+          <p class="team-card__role">Musculação</p>
+          <p class="team-card__cred">CREF 000000-X/MT</p>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-card__photo team-card__photo--placeholder">
+            <svg viewBox="0 0 24 24"><path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="team-card__name">Nome do Professor</h3>
+          <p class="team-card__role">Funcional &amp; Crossfit</p>
+          <p class="team-card__cred">CREF 000000-X/MT</p>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-card__photo team-card__photo--placeholder">
+            <svg viewBox="0 0 24 24"><path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="team-card__name">Nome do Professor</h3>
+          <p class="team-card__role">Jiu-Jitsu — Faixa Preta</p>
+          <p class="team-card__cred">Instrutor responsável</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- DIFERENCIAIS -->
   <section class="section" id="diferenciais">
     <div class="container">
@@ -191,12 +347,92 @@
     </div>
   </section>
 
+  <!-- DEPOIMENTOS -->
+  <!-- TODO: substitua nome, tempo de treino, frase e foto de cada depoimento por alunos reais (com autorização deles para usar nome/foto). -->
+  <section class="section section--alt" id="depoimentos">
+    <div class="container">
+      <p class="eyebrow eyebrow--center">Quem treina, aprova</p>
+      <h2 class="section__title section__title--center">Depoimentos de <span class="gradient-text">Alunos</span></h2>
+
+      <div class="testimonial-grid">
+        <article class="testimonial-card reveal">
+          <p class="testimonial-card__quote">"Depoimento real de um aluno sobre a experiência na Fênix."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar"></div>
+            <div>
+              <span class="testimonial-card__name">Nome do Aluno</span>
+              <span class="testimonial-card__time">há X meses treinando</span>
+            </div>
+          </div>
+        </article>
+        <article class="testimonial-card reveal">
+          <p class="testimonial-card__quote">"Depoimento real de outro aluno sobre a experiência na Fênix."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar"></div>
+            <div>
+              <span class="testimonial-card__name">Nome do Aluno</span>
+              <span class="testimonial-card__time">há X anos treinando</span>
+            </div>
+          </div>
+        </article>
+        <article class="testimonial-card reveal">
+          <p class="testimonial-card__quote">"Depoimento real de mais um aluno sobre a experiência na Fênix."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar"></div>
+            <div>
+              <span class="testimonial-card__name">Nome do Aluno</span>
+              <span class="testimonial-card__time">há X meses treinando</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <!-- TODO: troque os data-src abaixo por fotos reais da academia (as mesmas do Instagram funcionam bem). -->
+  <section class="section" id="instagram">
+    <div class="container">
+      <p class="eyebrow eyebrow--center">@academiafenix_bbu</p>
+      <h2 class="section__title section__title--center">Segue a gente no <span class="gradient-text">Instagram</span></h2>
+      <p class="section__subtitle">Quase 6 mil pessoas já acompanham o dia a dia da Fênix por lá.</p>
+
+      <div class="insta-grid">
+        <a href="https://instagram.com/academiafenix_bbu" target="_blank" rel="noopener" class="insta-tile reveal">
+          <svg viewBox="0 0 24 24" class="insta-tile__icon"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="https://instagram.com/academiafenix_bbu" target="_blank" rel="noopener" class="insta-tile reveal">
+          <svg viewBox="0 0 24 24" class="insta-tile__icon"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="https://instagram.com/academiafenix_bbu" target="_blank" rel="noopener" class="insta-tile reveal">
+          <svg viewBox="0 0 24 24" class="insta-tile__icon"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="https://instagram.com/academiafenix_bbu" target="_blank" rel="noopener" class="insta-tile reveal">
+          <svg viewBox="0 0 24 24" class="insta-tile__icon"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor"/></svg>
+        </a>
+      </div>
+
+      <div class="insta-cta">
+        <a href="https://instagram.com/academiafenix_bbu" target="_blank" rel="noopener" class="btn btn--ghost">Ver perfil no Instagram</a>
+      </div>
+    </div>
+  </section>
+
   <!-- PLANOS -->
   <section class="section section--alt" id="planos">
     <div class="container">
       <p class="eyebrow eyebrow--center">Invista em você</p>
       <h2 class="section__title section__title--center">Nossos <span class="gradient-text">Planos</span></h2>
       <p class="section__subtitle">Fale com a nossa equipe e encontre o plano ideal para o seu momento.</p>
+
+      <!-- TODO: confirme o preço/condição real da promoção do Plano Anual e preencha abaixo (ex: "12x de R$ 99,99"). Enquanto não houver confirmação, o banner fica oculto. -->
+      <!--
+      <div class="promo-banner reveal">
+        <span class="promo-banner__tag">Oferta por tempo limitado</span>
+        <p class="promo-banner__text">Plano Anual a partir de <strong>12x de R$ 99,99</strong> — economize treinando o ano todo.</p>
+        <a href="https://wa.me/556596233084?text=Ol%C3%A1!%20Vi%20a%20promo%C3%A7%C3%A3o%20do%20Plano%20Anual%20e%20quero%20aproveitar." target="_blank" rel="noopener" class="btn btn--primary">Quero essa condição</a>
+      </div>
+      -->
 
       <div class="plans-grid">
 
@@ -268,6 +504,75 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <!-- TODO: confira se as respostas abaixo (cancelamento, estacionamento, idade mínima) batem com a política real da academia e ajuste o texto se precisar. -->
+  <section class="section section--alt" id="faq">
+    <div class="container">
+      <p class="eyebrow eyebrow--center">Dúvidas frequentes</p>
+      <h2 class="section__title section__title--center">Perguntas <span class="gradient-text">Frequentes</span></h2>
+
+      <div class="faq-list">
+        <details class="faq-item reveal">
+          <summary>Preciso ter experiência para começar o jiu-jitsu?</summary>
+          <p>Não. Temos turmas para iniciantes de todas as idades, incluindo jiu-jitsu kids — você aprende no seu ritmo, com acompanhamento dos professores.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Tem aula para criança?</summary>
+          <p>Sim, temos turmas infantis de jiu-jitsu. Fale com a gente pelo WhatsApp para saber horários e idade mínima da turma.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Posso cancelar ou pausar meu plano quando quiser?</summary>
+          <p>O Plano Anual permite pausar por até 2 meses quando precisar. Para os demais planos e condições de cancelamento, fale com a nossa equipe.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>A academia tem estacionamento?</summary>
+          <p>Fale com a nossa equipe pelo WhatsApp para confirmar a disponibilidade de estacionamento no horário do seu treino.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Preciso levar algum equipamento próprio?</summary>
+          <p>Para musculação, funcional e crossfit, basta vir com roupa confortável. Para jiu-jitsu, entre em contato para saber sobre o kimono.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDAR AULA EXPERIMENTAL -->
+  <section class="section" id="agendar">
+    <div class="container">
+      <div class="agendar">
+        <div class="agendar__text">
+          <p class="eyebrow">Dê o primeiro passo</p>
+          <h2 class="section__title">Agende sua <span class="gradient-text">aula experimental</span></h2>
+          <p class="sobre__lead">Preencha seus dados que a nossa equipe entra em contato pelo WhatsApp para confirmar o melhor horário para você conhecer a Fênix.</p>
+        </div>
+
+        <form class="agendar__form" id="expForm">
+          <label class="form-field">
+            <span>Nome</span>
+            <input type="text" name="nome" placeholder="Seu nome" required>
+          </label>
+          <label class="form-field">
+            <span>WhatsApp</span>
+            <input type="tel" name="telefone" placeholder="(65) 9 9999-9999" required>
+          </label>
+          <label class="form-field">
+            <span>Modalidade de interesse</span>
+            <select name="modalidade" required>
+              <option value="" disabled selected>Selecione</option>
+              <option value="Musculação">Musculação</option>
+              <option value="Funcional">Funcional</option>
+              <option value="Crossfit">Crossfit</option>
+              <option value="Jiu-Jitsu">Jiu-Jitsu</option>
+              <option value="Ainda não sei">Ainda não sei</option>
+            </select>
+          </label>
+          <button type="submit" class="btn btn--primary btn--block">Quero agendar minha aula</button>
+          <p class="agendar__hint">Ao enviar, você será direcionado ao WhatsApp da Fênix com seus dados preenchidos.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTATO -->
   <section class="section section--alt" id="contato">
     <div class="container">
@@ -327,16 +632,18 @@
 <footer class="footer">
   <div class="container footer__inner">
     <a href="#topo" class="brand brand--footer">
-      <img src="assets/img/logo.jpg" alt="Academia Fênix" class="brand__logo">
+      <img src="assets/img/logo.jpg" alt="Academia Fênix" class="brand__logo" loading="lazy">
       <span class="brand__text">FÊNIX <small>BBU</small></span>
     </a>
 
     <nav class="footer__nav">
       <a href="#sobre">Sobre</a>
       <a href="#modalidades">Modalidades</a>
+      <a href="#equipe">Equipe</a>
       <a href="#planos">Planos</a>
-      <a href="#horarios">Horários</a>
+      <a href="#faq">FAQ</a>
       <a href="#contato">Contato</a>
+      <a href="privacidade.html">Privacidade</a>
     </nav>
 
     <p class="footer__copy">&copy; <span id="year"></span> Academia Fênix BBU. Todos os direitos reservados.</p>
@@ -346,6 +653,10 @@
 <a href="https://wa.me/556596233084" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Falar no WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M6 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v3a2 2 0 0 1-2 2C10.6 20 4 13.4 4 6a2 2 0 0 1 2-2Z" fill="currentColor"/></svg>
 </a>
+
+<div class="sticky-cta">
+  <a href="#agendar" class="btn btn--primary btn--block">Agendar aula grátis</a>
+</div>
 
 <script src="js/main.js"></script>
 </body>
