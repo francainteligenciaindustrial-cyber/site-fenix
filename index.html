@@ -563,8 +563,56 @@
               <option value="Ainda não sei">Ainda não sei</option>
             </select>
           </label>
+          <label class="form-field">
+            <span>Como você chegou até nós?</span>
+            <select name="comoChegou" required>
+              <option value="" disabled selected>Selecione</option>
+              <option value="Instagram">Instagram</option>
+              <option value="Facebook">Facebook</option>
+              <option value="Indicação de amigo">Indicação de amigo</option>
+              <option value="YouTube">YouTube</option>
+              <option value="Google">Google</option>
+              <option value="Passando na rua">Passando na rua</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </label>
+          <div class="form-row">
+            <label class="form-field">
+              <span>Faixa etária <em>(opcional)</em></span>
+              <select name="faixaEtaria">
+                <option value="" selected>Prefiro não informar</option>
+                <option value="Menos de 18">Menos de 18</option>
+                <option value="18 a 25">18 a 25</option>
+                <option value="26 a 35">26 a 35</option>
+                <option value="36 a 45">36 a 45</option>
+                <option value="46 a 55">46 a 55</option>
+                <option value="Mais de 55">Mais de 55</option>
+              </select>
+            </label>
+            <label class="form-field">
+              <span>Gênero <em>(opcional)</em></span>
+              <select name="genero">
+                <option value="" selected>Prefiro não informar</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Outro">Outro</option>
+              </select>
+            </label>
+          </div>
+          <label class="form-field">
+            <span>Qual seu principal objetivo? <em>(opcional)</em></span>
+            <select name="objetivo">
+              <option value="" selected>Prefiro não informar</option>
+              <option value="Emagrecer">Emagrecer</option>
+              <option value="Ganhar massa muscular">Ganhar massa muscular</option>
+              <option value="Competir">Competir</option>
+              <option value="Praticar esporte / lazer">Praticar esporte / lazer</option>
+              <option value="Saúde e bem-estar">Saúde e bem-estar</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </label>
           <button type="submit" class="btn btn--primary btn--block">Quero agendar minha aula</button>
-          <p class="agendar__hint">Ao enviar, você será direcionado ao WhatsApp da Fênix com seus dados preenchidos.</p>
+          <p class="agendar__hint">Ao enviar, você será direcionado ao WhatsApp da Fênix com seus dados preenchidos. Os dados opcionais nos ajudam a entender melhor quem treina com a gente — veja nossa <a href="privacidade.html">política de privacidade</a>.</p>
         </form>
       </div>
     </div>

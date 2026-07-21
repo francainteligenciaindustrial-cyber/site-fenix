@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel do Dono | Academia Fênix BBU</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .dash-header {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    padding: 28px 24px; border-bottom: 1px solid var(--line);
+  }
+  .dash-main { max-width: 1180px; margin: 0 auto; padding: 36px 24px 80px; }
+  .dash-summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 40px; }
+  .dash-stat {
+    background: var(--charcoal); border: 1px solid var(--line); border-radius: var(--radius-sm);
+    padding: 22px 24px; text-align: center;
+  }
+  .dash-stat__num {
+    font-family: var(--font-display); font-size: 2.1rem;
+    background: var(--flame-gradient); -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .dash-stat__label { color: var(--gray); font-size: .82rem; margin-top: 6px; }
+  .dash-table-wrap {
+    background: var(--charcoal); border: 1px solid var(--line); border-radius: var(--radius);
+    overflow-x: auto;
+  }
+  table.dash-table { width: 100%; border-collapse: collapse; font-size: .86rem; white-space: nowrap; }
+  table.dash-table th, table.dash-table td { text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--line); }
+  table.dash-table th { color: var(--orange); font-weight: 600; font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; }
+  table.dash-table td { color: var(--white); }
+  table.dash-table tbody tr:last-child td { border-bottom: none; }
+  table.dash-table tbody tr:hover { background: rgba(255,255,255,.03); }
+  .dash-empty, .dash-loading { text-align: center; color: var(--gray); padding: 60px 20px; }
+  .dash-error { text-align: center; color: var(--red); padding: 60px 20px; }
+  @media (max-width: 640px) { .dash-summary { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+
+<div class="dash-header">
+  <span class="brand__text">FÊNIX <small style="color:var(--orange)">BBU</small> <span style="color:var(--gray); font-weight:400; font-size:.7em;">— Painel do Dono</span></span>
+  <button id="logoutBtn" class="btn btn--ghost" style="padding:10px 20px; font-size:.82rem;">Sair</button>
+</div>
+
+<main class="dash-main">
+  <div class="dash-summary" id="summary">
+    <div class="dash-stat"><div class="dash-stat__num" id="statTotal">–</div><div class="dash-stat__label">Total de leads</div></div>
+    <div class="dash-stat"><div class="dash-stat__num" id="statMonth">–</div><div class="dash-stat__label">Nos últimos 30 dias</div></div>
+    <div class="dash-stat"><div class="dash-stat__num" id="statTopChannel">–</div><div class="dash-stat__label">Principal canal</div></div>
+    <div class="dash-stat"><div class="dash-stat__num" id="statTopGoal">–</div><div class="dash-stat__label">Principal objetivo</div></div>
+  </div>
+
+  <div class="dash-table-wrap">
+    <div id="tableArea" class="dash-loading">Carregando...</div>
+  </div>
+</main>
+
+<script>
+  function esc(str) {
+    const div = document.createElement('div');
+    div.textContent = str == null || str === '' ? '—' : str;
+    return div.innerHTML;
+  }
+
+  function formatDate(iso) {
+    const d = new Date(iso);
+    return d.toLocaleDateString('pt-BR') + ' ' + d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+  }
+
+  function mostCommon(list) {
+    const counts = {};
+    let best = null, bestCount = 0;
+    list.forEach(v => {
+      if (!v) return;
+      counts[v] = (counts[v] || 0) + 1;
+      if (counts[v] > bestCount) { bestCount = counts[v]; best = v; }
+    });
+    return best || '—';
+  }
+
+  async function loadLeads() {
+    const tableArea = document.getElementById('tableArea');
+    try {
+      const res = await fetch('/api/leads');
+      if (res.status === 401) {
+        window.location.href = 'login.html';
+        return;
+      }
+      if (!res.ok) {
+        tableArea.innerHTML = '<p class="dash-error">Erro ao carregar os dados. Tente recarregar a página.</p>';
+        return;
+      }
+      const data = await res.json();
+      const leads = data.leads || [];
+
+      const thirtyDaysAgo = Date.now() - 30 * 24 * 60 * 60 * 1000;
+      document.getElementById('statTotal').textContent = leads.length;
+      document.getElementById('statMonth').textContent = leads.filter(l => new Date(l.created_at).getTime() >= thirtyDaysAgo).length;
+      document.getElementById('statTopChannel').textContent = mostCommon(leads.map(l => l.como_chegou));
+      document.getElementById('statTopGoal').textContent = mostCommon(leads.map(l => l.objetivo));
+
+      if (leads.length === 0) {
+        tableArea.innerHTML = '<p class="dash-empty">Nenhum agendamento recebido ainda.</p>';
+        return;
+      }
+
+      const rows = leads.map(l => `
+        <tr>
+          <td>${esc(l.nome)}</td>
+          <td>${esc(l.telefone)}</td>
+          <td>${esc(l.modalidade)}</td>
+          <td>${esc(l.como_chegou)}</td>
+          <td>${esc(l.faixa_etaria)}</td>
+          <td>${esc(l.genero)}</td>
+          <td>${esc(l.objetivo)}</td>
+          <td>${formatDate(l.created_at)}</td>
+        </tr>
+      `).join('');
+
+      tableArea.innerHTML = `
+        <table class="dash-table">
+          <thead>
+            <tr>
+              <th>Nome</th><th>WhatsApp</th><th>Modalidade</th><th>Como chegou</th>
+              <th>Faixa etária</th><th>Gênero</th><th>Objetivo</th><th>Data</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      `;
+    } catch (err) {
+      tableArea.innerHTML = '<p class="dash-error">Erro de conexão. Tente recarregar a página.</p>';
+    }
+  }
+
+  document.getElementById('logoutBtn').addEventListener('click', async () => {
+    await fetch('/api/logout', { method: 'POST' });
+    window.location.href = 'login.html';
+  });
+
+  loadLeads();
+</script>
+
+</body>
+</html>

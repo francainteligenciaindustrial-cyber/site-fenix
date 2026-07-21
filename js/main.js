@@ -79,7 +79,7 @@ const statObserver = new IntersectionObserver((entries) => {
 
 statNums.forEach(el => statObserver.observe(el));
 
-/* Experimental class form -> WhatsApp deep link */
+/* Experimental class form -> saves lead + WhatsApp deep link */
 const expForm = document.getElementById('expForm');
 if (expForm) {
   expForm.addEventListener('submit', (e) => {
@@ -87,6 +87,16 @@ if (expForm) {
     const nome = expForm.nome.value.trim();
     const telefone = expForm.telefone.value.trim();
     const modalidade = expForm.modalidade.value;
+    const comoChegou = expForm.comoChegou.value;
+    const faixaEtaria = expForm.faixaEtaria.value;
+    const genero = expForm.genero.value;
+    const objetivo = expForm.objetivo.value;
+
+    fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nome, telefone, modalidade, comoChegou, faixaEtaria, genero, objetivo }),
+    }).catch(() => {});
 
     const message = `Olá! Meu nome é ${nome} (WhatsApp: ${telefone}). Quero agendar uma aula experimental de ${modalidade} na Academia Fênix.`;
     const url = `https://wa.me/556596233084?text=${encodeURIComponent(message)}`;

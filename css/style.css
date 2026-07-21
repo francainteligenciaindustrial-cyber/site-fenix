@@ -518,6 +518,8 @@ ul { list-style: none; margin: 0; padding: 0; }
   display: grid; gap: 18px;
 }
 .form-field { display: grid; gap: 8px; font-size: .86rem; color: var(--gray); }
+.form-field em { color: var(--gray-dim); font-style: normal; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .form-field input, .form-field select {
   font-family: var(--font-body);
   background: var(--black-soft);
@@ -623,4 +625,5 @@ ul { list-style: none; margin: 0; padding: 0; }
   .footer__inner { flex-direction: column; text-align: center; }
   .footer__nav { justify-content: center; }
   .promo-banner { flex-direction: column; }
+  .form-row { grid-template-columns: 1fr; }
 }
