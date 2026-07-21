@@ -1,0 +1,12 @@
+{
+  "name": "academia-fenix-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site institucional da Academia Fênix BBU",
+  "scripts": {
+    "start": "serve -s . -l ${PORT:-3000}"
+  },
+  "dependencies": {
+    "serve": "^14.2.3"
+  }
+}
